@@ -73,28 +73,6 @@ app.put("/user/put/:id", (req, res) => {     //                         update A
 
 
 
-app.delete("/user/delete/:id",(req,res) =>{          // API for delete 
-   const id = req.params.id;
-
-        const sql = `
-          delete from student
-          where s_rollno= ? `;
-
-          db.query(sql,[id],(err,result) =>{
-              if(err){
-                return res.status(500).send(err);
-              }
-              res.send("Data has been deleted...")
-      });
-
-});
-
-
-
-
-
-
-
 
 const PORT = 3000;
 app.listen(PORT, () => {
