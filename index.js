@@ -34,8 +34,7 @@ app.get("/user/get/", (req, res) => {                 //            GET API
 });
 
 
-app.post("/user/post", async (req, res) => {                // API for post
-  try {
+app.post("/user/post", (req, res) => {                // API for post
     const { s_rollno, s_name, s_std, s_dob } = req.body;
 
     const sql =
@@ -47,10 +46,8 @@ app.post("/user/post", async (req, res) => {                // API for post
       }
       res.send("Data Inserted Successfully");
     });
-  } catch (error) {
-    res.status(500).send(result);
-  }
-});
+  } 
+)
 
 app.put("/user/put/:id", (req, res) => {     //                         update API
  const id = req.params.id;
